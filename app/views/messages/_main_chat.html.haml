@@ -1,0 +1,36 @@
+.chat-main
+  .chat-main__group-info
+    .overview
+      .overview-group
+        .overview-group__name
+          test
+        .overview-group__member
+          Member:yuta
+      .overview-edit
+        = link_to "#", class: "link2" do
+          Edit
+  .chat-main__message-list
+    .message
+      .message-date
+        .message-date__name
+          yuta
+        .message-date__time
+          2020/6/10(Wed) 19:35:30
+      .message-content
+        おはよう！
+    .message
+      .message-date
+        .message-date__name
+          yuta
+        .message-date__time
+          2020/6/10(Wed) 19:35:30
+      .message-content
+        おはよう！
+  .chat-main__message-form
+    .form
+      .form-text
+        %input.form-text__message{"placeholder": "type a message", "type": "text"}
+        %label{class: "form-text__picture"}
+          = icon('far','image')
+          %input{class: "form-text__picture__file", type: "file"}
+      %input.form-send{"type": "submit", "value": "Send"}
