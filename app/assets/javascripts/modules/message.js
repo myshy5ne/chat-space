@@ -2,37 +2,37 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="message">
-        <div class="message-date">
-          <div class="message-date__name">
-          ${message.user_name}
-          </div>
-          <div class="message-date__time">
-          ${message.created_at}
-          </div>
-        </div>
-        <div class="message-content">
-          <p class="message-content">
-          ${message.content}
-          </p>
-          <img class="message-content__image" src="${message.image}">
-        </div>
-      </div>`
-      return html;
-    } else {
-      let html =
-        `<div class="message">
+        `<div class="message" data-message-id=${message.id}>
           <div class="message-date">
             <div class="message-date__name">
-            ${message.user_name}
+              ${message.user_name}
             </div>
             <div class="message-date__time">
-            ${message.created_at}
+              ${message.created_at}
             </div>
           </div>
           <div class="message-content">
             <p class="message-content">
-            ${message.content}
+              ${message.content}
+            </p>
+            <img class="message-content__image" src="${message.image}">
+          </div>
+        </div>`
+      return html;
+    } else {
+      let html =
+        `<div class="message" data-message-id=${message.id}>
+          <div class="message-date">
+            <div class="message-date__name">
+              ${message.user_name}
+            </div>
+            <div class="message-date__time">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="message-content">
+            <p class="message-content">
+              ${message.content}
             </p>
           </div>
         </div>`
@@ -65,4 +65,4 @@ $(function(){
       $('.form-send').prop('disabled', false);
     });
   })
-})
+});
